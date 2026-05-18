@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caroline Wambui Kamau — Operations & Growth Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0A1628;
+  --cream:#F5F0E8;
+  --gold:#C9A84C;
+  --sage:#4A7C59;
+  --text:#1A1A2E;
+  --muted:#666;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 4rem;display:flex;justify-content:space-between;align-items:center;background:rgba(245,240,232,0.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.2)}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--navy);text-decoration:none}
+.nav-links{display:flex;gap:2.5rem}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--navy);color:var(--cream) !important;padding:0.5rem 1.4rem;border-radius:3rem;transition:all 0.3s !important}
+.nav-cta:hover{background:var(--gold) !important;color:var(--navy) !important}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;padding:7rem 4rem 4rem;gap:5rem;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:-10%;right:-5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);pointer-events:none;z-index:0}
+.hero-left{position:relative;z-index:1;animation:fadeUp 0.9s ease both}
+.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);color:var(--navy);font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 1.1rem;border-radius:3rem;margin-bottom:1.8rem}
+.hero-tag::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;display:inline-block}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.6rem,4.5vw,4rem);line-height:1.08;color:var(--navy);margin-bottom:1.5rem}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero-sub{font-size:1rem;color:var(--muted);line-height:1.85;margin-bottom:2.5rem;max-width:500px}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn-primary{background:var(--navy);color:var(--cream);padding:0.9rem 2.2rem;border-radius:3rem;text-decoration:none;font-size:0.88rem;font-weight:500;transition:all 0.3s;border:2px solid var(--navy);display:inline-block}
+.btn-primary:hover{background:transparent;color:var(--navy)}
+.btn-secondary{background:transparent;color:var(--navy);padding:0.9rem 2.2rem;border-radius:3rem;text-decoration:none;font-size:0.88rem;font-weight:500;transition:all 0.3s;border:2px solid rgba(10,22,40,0.25);display:inline-block}
+.btn-secondary:hover{border-color:var(--navy);background:var(--navy);color:var(--cream)}
+.hero-badges{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-badge{font-size:0.78rem;color:var(--muted);display:flex;align-items:center;gap:0.4rem}
+.hero-badge::before{content:'✓';color:var(--sage);font-weight:700}
+
+.hero-right{position:relative;z-index:1;animation:fadeUp 0.9s 0.15s ease both}
+.hero-card{background:var(--navy);border-radius:1.8rem;padding:2.5rem;color:var(--cream);position:relative;overflow:hidden}
+.hero-card::before{content:'';position:absolute;top:-50%;right:-30%;width:350px;height:350px;border-radius:50%;background:rgba(201,168,76,0.08);pointer-events:none}
+.hero-card-label{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;font-weight:500}
+.hero-card h3{font-family:'DM Serif Display',serif;font-size:1.25rem;margin-bottom:2rem;line-height:1.35;color:rgba(245,240,232,0.95)}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
+.stat{border-top:1px solid rgba(201,168,76,0.25);padding-top:1rem}
+.stat-num{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--gold);line-height:1}
+.stat-label{font-size:0.75rem;color:rgba(245,240,232,0.55);margin-top:0.3rem;line-height:1.45}
+.skill-tags{display:flex;flex-wrap:wrap;gap:0.45rem}
+.skill-tag{background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);color:rgba(245,240,232,0.75);padding:0.28rem 0.75rem;border-radius:2rem;font-size:0.72rem}
+
+/* SECTIONS */
+.section{padding:5.5rem 4rem}
+.section-label{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem;font-weight:500}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.9rem,3vw,2.6rem);color:var(--navy);margin-bottom:3rem;line-height:1.15}
+
+/* SERVICES */
+.services-section{background:white}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.service-card{background:var(--cream);border-radius:1.3rem;padding:2rem;border:1px solid rgba(10,22,40,0.07);transition:all 0.35s;position:relative;overflow:hidden}
+.service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform 0.35s;transform-origin:left}
+.service-card:hover{transform:translateY(-5px);box-shadow:0 24px 60px rgba(10,22,40,0.08);border-color:rgba(201,168,76,0.3)}
+.service-card:hover::after{transform:scaleX(1)}
+.service-icon{font-size:1.8rem;margin-bottom:1.2rem;display:block}
+.service-card h3{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--navy);margin-bottom:0.7rem}
+.service-card p{font-size:0.85rem;color:var(--muted);line-height:1.7;margin-bottom:1rem}
+.service-items{display:flex;flex-direction:column;gap:0.45rem}
+.service-item{font-size:0.8rem;color:var(--muted);padding-left:1.1rem;position:relative;line-height:1.5}
+.service-item::before{content:'→';position:absolute;left:0;color:var(--gold);font-size:0.75rem}
+
+/* EXPERIENCE */
+.experience-section{background:var(--navy)}
+.experience-section .section-label{color:rgba(201,168,76,0.7)}
+.experience-section .section-title{color:var(--cream)}
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.exp-card{border:1px solid rgba(201,168,76,0.15);border-radius:1.3rem;padding:1.8rem;transition:all 0.3s;position:relative}
+.exp-card:hover{border-color:rgba(201,168,76,0.45);background:rgba(201,168,76,0.04)}
+.exp-dates{font-size:0.72rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;font-weight:500}
+.exp-title{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--cream);margin-bottom:0.25rem;line-height:1.3}
+.exp-org{font-size:0.82rem;color:rgba(245,240,232,0.45);margin-bottom:1.1rem}
+.exp-highlights{display:flex;flex-direction:column;gap:0.5rem}
+.exp-highlight{font-size:0.81rem;color:rgba(245,240,232,0.65);padding-left:1rem;position:relative;line-height:1.55}
+.exp-highlight::before{content:'·';position:absolute;left:0;color:var(--gold);font-weight:700;font-size:1.1rem;top:-1px}
+
+/* ACHIEVEMENTS */
+.achievements-section{background:var(--cream)}
+.ach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.ach-card{background:white;border-radius:1.3rem;padding:2rem;text-align:center;border:1px solid rgba(10,22,40,0.07);transition:all 0.3s}
+.ach-card:hover{border-color:rgba(201,168,76,0.4);transform:translateY(-3px)}
+.ach-num{font-family:'DM Serif Display',serif;font-size:2.8rem;color:var(--gold);display:block;line-height:1}
+.ach-label{font-size:0.8rem;color:var(--muted);margin-top:0.6rem;line-height:1.55}
+
+/* TOOLS */
+.tools-section{background:white;padding:5.5rem 4rem}
+.tools-grid{display:flex;flex-wrap:wrap;gap:0.75rem;max-width:900px}
+.tool-badge{background:var(--cream);border:1px solid rgba(10,22,40,0.1);border-radius:3rem;padding:0.55rem 1.2rem;font-size:0.83rem;color:var(--navy);transition:all 0.25s;cursor:default}
+.tool-badge:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,0.06)}
+
+/* EDUCATION */
+.education-section{background:var(--cream);padding:5.5rem 4rem}
+.edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.edu-card{background:white;border-radius:1.3rem;padding:1.8rem;border:1px solid rgba(10,22,40,0.07)}
+.edu-year{font-size:0.72rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;font-weight:500}
+.edu-title{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--navy);margin-bottom:0.3rem;line-height:1.3}
+.edu-org{font-size:0.82rem;color:var(--muted)}
+
+/* CONTACT */
+.contact-section{background:var(--navy);padding:6rem 4rem;text-align:center}
+.contact-section .section-label{color:rgba(201,168,76,0.7)}
+.contact-section .section-title{color:var(--cream);margin-bottom:1rem}
+.contact-section > p{color:rgba(245,240,232,0.55);font-size:0.95rem;margin-bottom:3rem;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.85}
+.contact-links{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.contact-link{color:var(--cream);text-decoration:none;font-size:0.88rem;border:1px solid rgba(201,168,76,0.35);padding:0.85rem 2.2rem;border-radius:3rem;transition:all 0.3s;display:inline-block}
+.contact-link:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.contact-detail{color:rgba(245,240,232,0.35);font-size:0.8rem;line-height:1.8}
+.availability-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(74,124,89,0.2);border:1px solid rgba(74,124,89,0.4);color:rgba(245,240,232,0.8);font-size:0.75rem;padding:0.4rem 1rem;border-radius:3rem;margin-bottom:2rem}
+.availability-badge::before{content:'';width:7px;height:7px;background:#5fba7d;border-radius:50%;display:inline-block;animation:pulse 2s infinite}
+
+/* FOOTER */
+footer{background:var(--navy);border-top:1px solid rgba(201,168,76,0.12);padding:1.8rem 4rem;display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--gold)}
+footer p{font-size:0.78rem;color:rgba(245,240,232,0.3)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{gap:1.2rem}
+  .hero{grid-template-columns:1fr;padding:6rem 1.5rem 3rem;gap:3rem}
+  .hero-right{order:-1}
+  .section{padding:4rem 1.5rem}
+  .services-grid{grid-template-columns:1fr}
+  .exp-grid{grid-template-columns:1fr}
+  .ach-grid{grid-template-columns:1fr 1fr}
+  .edu-grid{grid-template-columns:1fr}
+  .tools-section,.education-section{padding:4rem 1.5rem}
+  .contact-section{padding:4rem 1.5rem}
+  footer{padding:1.5rem;flex-direction:column;gap:0.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Caroline Wambui</a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#experience">Experience</a>
+    <a href="#tools">Tools</a>
+    <a href="#contact" class="nav-cta">Hire me</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Available for remote opportunities</div>
+    <h1>Operations &amp; Growth <em>Specialist</em></h1>
+    <p class="hero-sub">Nairobi-based remote professional with 7 years of experience helping startups and growing businesses run efficiently, show up online, and scale with confidence.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Work with me</a>
+      <a href="#experience" class="btn-secondary">View experience</a>
+    </div>
+    <div class="hero-badges">
+      <span class="hero-badge">Remote-ready</span>
+      <span class="hero-badge">English &amp; Kiswahili</span>
+      <span class="hero-badge">EAT (UTC+3)</span>
+      <span class="hero-badge">Immediately available</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="hero-card-label">Current role</div>
+      <h3>Business Operations Manager<br>SoftWave Vitality &mdash; Los Angeles, CA</h3>
+      <div class="stat-grid">
+        <div class="stat"><div class="stat-num">7+</div><div class="stat-label">Years of professional experience</div></div>
+        <div class="stat"><div class="stat-num">1K+</div><div class="stat-label">Freelance projects at 95% satisfaction</div></div>
+        <div class="stat"><div class="stat-num">5</div><div class="stat-label">Social platforms managed simultaneously</div></div>
+        <div class="stat"><div class="stat-num">+25%</div><div class="stat-label">Traffic growth delivered at Jiji Kenya</div></div>
+      </div>
+      <div class="skill-tags">
+        <span class="skill-tag">Operations</span>
+        <span class="skill-tag">Social Media</span>
+        <span class="skill-tag">Email Marketing</span>
+        <span class="skill-tag">HR &amp; Payroll</span>
+        <span class="skill-tag">CRM</span>
+        <span class="skill-tag">Paid Ads</span>
+        <span class="skill-tag">Research</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services-section" id="services">
+  <div class="section-label">What I do</div>
+  <div class="section-title">Services I offer</div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">📱</span>
+      <h3>Social Media Management</h3>
+      <p>End-to-end management of your brand's online presence across all major platforms.</p>
+      <div class="service-items">
+        <div class="service-item">Content creation &amp; scheduling</div>
+        <div class="service-item">Community engagement &amp; responses</div>
+        <div class="service-item">Paid ad campaigns (Meta, Google, TikTok)</div>
+        <div class="service-item">Analytics &amp; monthly reporting</div>
+        <div class="service-item">Reputation management (Yelp, Google)</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">⚙️</span>
+      <h3>Business Operations</h3>
+      <p>Building the operational backbone that keeps your business running smoothly at scale.</p>
+      <div class="service-items">
+        <div class="service-item">CRM setup &amp; management</div>
+        <div class="service-item">SOP development &amp; documentation</div>
+        <div class="service-item">Vendor &amp; partner coordination</div>
+        <div class="service-item">Executive &amp; calendar support</div>
+        <div class="service-item">Process optimisation</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">📧</span>
+      <h3>Email Marketing</h3>
+      <p>Campaigns and automations that nurture leads and keep clients coming back.</p>
+      <div class="service-items">
+        <div class="service-item">Campaign strategy &amp; execution</div>
+        <div class="service-item">Automation flows &amp; drip sequences</div>
+        <div class="service-item">Newsletter creation &amp; distribution</div>
+        <div class="service-item">Lead nurturing &amp; re-engagement</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">👥</span>
+      <h3>HR &amp; People Operations</h3>
+      <p>From hiring to compliance — I handle the people side of your business.</p>
+      <div class="service-items">
+        <div class="service-item">End-to-end recruitment &amp; screening</div>
+        <div class="service-item">Onboarding &amp; offer letters</div>
+        <div class="service-item">Payroll management (Gusto)</div>
+        <div class="service-item">Employee handbooks &amp; compliance</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">💰</span>
+      <h3>Financial Tracking</h3>
+      <p>Keeping your numbers organised, accurate, and decision-ready every month.</p>
+      <div class="service-items">
+        <div class="service-item">Expense reconciliation (Tiller)</div>
+        <div class="service-item">Revenue tracking &amp; reporting</div>
+        <div class="service-item">Budget management</div>
+        <div class="service-item">Multi-channel financial analysis</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">📝</span>
+      <h3>Content &amp; Research</h3>
+      <p>Written content and data research that informs strategy and drives engagement.</p>
+      <div class="service-items">
+        <div class="service-item">Blog writing &amp; SEO content</div>
+        <div class="service-item">Market &amp; competitor research</div>
+        <div class="service-item">Reports, briefs &amp; presentations</div>
+        <div class="service-item">Data collection &amp; analysis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section experience-section" id="experience">
+  <div class="section-label">Career history</div>
+  <div class="section-title">Work experience</div>
+  <div class="exp-grid">
+    <div class="exp-card">
+      <div class="exp-dates">Feb 2024 &mdash; Present</div>
+      <div class="exp-title">Business Operations Manager</div>
+      <div class="exp-org">SoftWave Vitality &middot; Los Angeles, USA (Remote)</div>
+      <div class="exp-highlights">
+        <div class="exp-highlight">Managed all HR, CRM, social media, paid ads, and financial operations independently</div>
+        <div class="exp-highlight">Built CRM from scratch and launched payroll on Gusto with full compliance</div>
+        <div class="exp-highlight">Ran Meta, Google &amp; TikTok ad campaigns simultaneously</div>
+        <div class="exp-highlight">Authored employee handbook, SOPs, and all HR documentation from scratch</div>
+        <div class="exp-highlight">Coordinated with legal firms, insurance providers, and ad agencies as CEO liaison</div>
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-dates">Jan 2023 &mdash; Feb 2024</div>
+      <div class="exp-title">Digital Marketer</div>
+      <div class="exp-org">Jiji Kenya &middot; Nairobi, Kenya</div>
+      <div class="exp-highlights">
+        <div class="exp-highlight">Increased online traffic by 25% within 6 months through targeted campaigns</div>
+        <div class="exp-highlight">Boosted conversion rates by 15% through data-driven strategy</div>
+        <div class="exp-highlight">Produced market research and competitor analysis reports optimising ROI</div>
+        <div class="exp-highlight">Managed community engagement and brand reputation across platforms</div>
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-dates">Apr 2024 &mdash; Sep 2024</div>
+      <div class="exp-title">Research &amp; Data Specialist</div>
+      <div class="exp-org">Fiverr &middot; Remote (Freelance)</div>
+      <div class="exp-highlights">
+        <div class="exp-highlight">Completed 1,000+ projects with 95% client satisfaction rate</div>
+        <div class="exp-highlight">Reduced research turnaround time by 25% through streamlined workflows</div>
+        <div class="exp-highlight">Covered market research, academic reviews, and business reporting</div>
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-dates">Jan 2021 &mdash; Sep 2022</div>
+      <div class="exp-title">Assistant Researcher</div>
+      <div class="exp-org">KARLO &middot; Nairobi, Kenya</div>
+      <div class="exp-highlights">
+        <div class="exp-highlight">Led field research across Kajiado County influencing county-level agricultural policy</div>
+        <div class="exp-highlight">Trained 500+ farmers; achieved 25% increase in crop yields within two seasons</div>
+        <div class="exp-highlight">Secured funding for two major smallholder farmer initiatives through research reports</div>
+        <div class="exp-highlight">Increased farmer participation in workshops by 40% through community outreach</div>
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-dates">Jun 2020 &mdash; Mar 2021</div>
+      <div class="exp-title">Community Volunteer &mdash; Head of Peer Educators</div>
+      <div class="exp-org">AMREF Health Africa &middot; Nairobi, Kenya</div>
+      <div class="exp-highlights">
+        <div class="exp-highlight">Led health campaigns in the Maasai region on FGM and reproductive health</div>
+        <div class="exp-highlight">Reduced early pregnancies by 30% in one year through sensitisation programmes</div>
+        <div class="exp-highlight">Managed a team of peer educators and coordinated school outreach programmes</div>
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-dates">Mar 2019 &mdash; Jan 2020</div>
+      <div class="exp-title">Business Negotiator</div>
+      <div class="exp-org">Bolt &middot; Nairobi, Kenya</div>
+      <div class="exp-highlights">
+        <div class="exp-highlight">Registered 15&ndash;25 new drivers daily contributing to platform expansion</div>
+        <div class="exp-highlight">Generated daily performance reports on sign-ups and engagement</div>
+        <div class="exp-highlight">Educated motorists on platform features driving awareness and adoption</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="section achievements-section" id="achievements">
+  <div class="section-label">By the numbers</div>
+  <div class="section-title">Impact highlights</div>
+  <div class="ach-grid">
+    <div class="ach-card">
+      <span class="ach-num">1,000+</span>
+      <div class="ach-label">Freelance research projects completed at 95% client satisfaction rate</div>
+    </div>
+    <div class="ach-card">
+      <span class="ach-num">+25%</span>
+      <div class="ach-label">Online traffic growth achieved at Jiji Kenya within 6 months</div>
+    </div>
+    <div class="ach-card">
+      <span class="ach-num">500+</span>
+      <div class="ach-label">Farmers trained in sustainable agricultural methods at KARLO</div>
+    </div>
+    <div class="ach-card">
+      <span class="ach-num">30%</span>
+      <div class="ach-label">Reduction in early pregnancies through AMREF health campaigns in one year</div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="tools-section" id="tools">
+  <div class="section-label">Tech stack</div>
+  <div class="section-title">Tools &amp; platforms</div>
+  <div class="tools-grid">
+    <span class="tool-badge">Meta Ads Manager</span>
+    <span class="tool-badge">Google Ads</span>
+    <span class="tool-badge">TikTok Ads Manager</span>
+    <span class="tool-badge">Google Analytics</span>
+    <span class="tool-badge">Meta Business Suite</span>
+    <span class="tool-badge">Vagaro CRM</span>
+    <span class="tool-badge">Next Level Software</span>
+    <span class="tool-badge">HubSpot</span>
+    <span class="tool-badge">Asana</span>
+    <span class="tool-badge">Gusto</span>
+    <span class="tool-badge">Stripe</span>
+    <span class="tool-badge">QuickBooks</span>
+    <span class="tool-badge">Tiller</span>
+    <span class="tool-badge">Affirm</span>
+    <span class="tool-badge">Canva</span>
+    <span class="tool-badge">Google Workspace</span>
+    <span class="tool-badge">Microsoft Office</span>
+    <span class="tool-badge">Zoom</span>
+    <span class="tool-badge">Slack</span>
+    <span class="tool-badge">Notion</span>
+    <span class="tool-badge">Buffer</span>
+    <span class="tool-badge">Shopify</span>
+    <span class="tool-badge">Zoho CRM</span>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="education-section" id="education">
+  <div class="section-label">Academic background</div>
+  <div class="section-title">Education &amp; certifications</div>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-year">2016 &mdash; 2020</div>
+      <div class="edu-title">Bachelor of Arts &mdash; Economics &amp; Sociology</div>
+      <div class="edu-org">Kenyatta University, Nairobi</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">Oct &mdash; Dec 2024</div>
+      <div class="edu-title">Certificate in Digital Customer Service</div>
+      <div class="edu-org">Generation Programme Kenya</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">Sep &mdash; Nov 2024</div>
+      <div class="edu-title">Certificate in AI Career Essentials</div>
+      <div class="edu-org">ALX Kenya</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-label">Get in touch</div>
+  <div class="section-title">Let's work together</div>
+  <div class="availability-badge">Available for new opportunities</div>
+  <p>I'm open to remote full-time roles, contract work, and freelance projects. Based in Nairobi, Kenya (EAT, UTC+3) &mdash; overlapping with Europe and partial US East Coast hours.</p>
+  <div class="contact-links">
+    <a href="mailto:carolinekamau1998@gmail.com" class="contact-link">✉ &nbsp;Email me</a>
+    <a href="https://www.linkedin.com/in/caroline-kamau-949357240" target="_blank" class="contact-link">LinkedIn Profile</a>
+  </div>
+  <div class="contact-detail">
+    +254 707 380 358 &nbsp;&middot;&nbsp; carolinekamau1998@gmail.com<br>
+    Nairobi, Kenya &nbsp;&middot;&nbsp; English &amp; Kiswahili &nbsp;&middot;&nbsp; Immediately available
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Caroline Wambui Kamau</div>
+  <p>Operations &amp; Growth Specialist &nbsp;&middot;&nbsp; Remote-Ready &nbsp;&middot;&nbsp; &copy; 2026</p>
+</footer>
+
+</body>
+</html>
